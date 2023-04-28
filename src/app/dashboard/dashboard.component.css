@@ -1,0 +1,32 @@
+/* .t-head{
+    background-color: rgb(237, 239, 242);
+    font-size: 14px;
+    text-align: left;
+}
+
+.t-body{
+    background-color: red;
+    word-wrap: normal;
+
+} */
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #e8e9eb;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
