@@ -1,0 +1,157 @@
+.attachment {
+    background-color: rgb(228, 225, 225);
+    width: 30%;
+    height: 30px;
+    padding-left: 1px;
+    padding-top: 2px;
+    margin-bottom: 1%;
+}
+
+.attachment>label {
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.GST>input {
+    width: 50%;
+}
+
+.add {
+    background-color: rgb(38, 170, 38);
+    width: 15%;
+    margin-left: 67%;
+}
+
+.cancel {
+    background-color: red;
+    width: 17%;
+}
+
+body,
+div,
+form,
+input,
+textarea,
+select,
+p {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+h1 {
+    margin: 0;
+    font-weight: 400;
+}
+
+h3 {
+    margin: 12px 0;
+    color: #8ebf42;
+}
+
+.main-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+form {
+    width: 100%;
+    padding: 20px;
+}
+
+fieldset {
+    border: none;
+    border-top: 1px solid #c2c7bc;
+
+}
+
+.account-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.account-details>div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+label {
+    padding: 0 5px;
+    text-align: right;
+    vertical-align: middle;
+    width: 30%;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.lower-body {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(201, 207, 212);
+}
+
+
+select,
+.children,
+.gender,
+.bdate-block {
+    width: calc(100% + 20px);
+    padding: 5px 0;
+}
+
+select {
+    background: transparent;
+}
+
+button {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: none;
+    background: #8ebf42;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+button:hover {
+    background: #82b534;
+}
+
+@media (min-width: 568px) {
+
+    .account-details>div {
+        width: 30%;
+        justify-content: space-around;
+    }
+
+    label {
+        width: 28%;
+    }
+
+    input,
+    textarea {
+        width: 60%;
+    }
+
+    select,
+    .children,
+    .gender,
+    .bdate-block {
+        width: calc(56% + 16px);
+    }
+}
