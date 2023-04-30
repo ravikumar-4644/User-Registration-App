@@ -1,158 +1,314 @@
-<div class="main-block">
-    <form action="/">
-        <div class="account-details">
-            <div class="GST"><label>GST No:</label><input type="text" placeholder="Enter GST No" required><i
-                    class="fa fa-check-square fa-2x" style="color: #14b629;"></i></div>
-            <div><label>PAN No:</label><input type="text" placeholder="Ex.ADSKHDKHJ" required></div>
-            <div><label style="color: red;">Code:</label><input type="text" placeholder="Enter Code" required></div>
-            <div><label style="color: red;">Name:</label><input type="text" placeholder="Enter Name" required></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-block">
+        <form (submit)="onSubmit()" #myForm="ngForm">
+          <div class="account-details">
+            <div class="GST">
+              <label for="gstno">GST No:</label>
+              <input
+                type="text"
+                name="gstno"
+                placeholder="Enter GST No"
+                [(ngModel)]="gstno"
+                required
+              />
+              <i class="fa fa-check-square fa-2x" style="color: #14b629"></i>
+            </div>
+      
             <div>
-                <label>Address:</label>
-                <textarea type="text" placeholder="Enter Address" required></textarea>
-
+              <label for="panno">PAN No:</label
+              ><input
+                type="text"
+                name="panno"
+                placeholder="Ex.ADSKHDKHJ"
+                [(ngModel)]="panno"
+                required
+              />
+            </div>
+      
+            <div>
+              <label for="code" style="color: red">Code:</label
+              ><input
+                type="text"
+                name="code"
+                placeholder="Enter Code"
+                [(ngModel)]="code"
+                required
+              />
+            </div>
+      
+            <div>
+              <label for="name" style="color: red">Name:</label
+              ><input
+                type="text"
+                name="name"
+                placeholder="Enter Name"
+                [(ngModel)]="name"
+                required
+              />
+            </div>
+      
+            <div>
+              <label for="address">Address:</label>
+              <textarea
+                type="text"
+                name="address"
+                placeholder="Enter Address"
+                [(ngModel)]="address"
+                required
+              ></textarea>
+            </div>
+      
+            <div>
+              <label for="pincode">Pin Code:</label>
+              <input
+                type="text"
+                name="pincode"
+                placeholder="Enter Pin Code"
+                [(ngModel)]="pincode"
+                required
+              />
+            </div>
+      
+            <div>
+              <label for="country">Country:</label>
+              <select name="country" [(ngModel)]="country">
+                <option selected>Select Country</option>
+                <option>India</option>
+                <option>Australia</option>
+                <option>USA</option>
+              </select>
             </div>
             <div>
-                <label>Pin Code:</label>
-                <input type="text" placeholder="Enter Pin Code" required>
-            </div>
-
-
-            <div>
-                <label>Country:</label>
-                <select>
-                    <option>Select Country</option>
-                    <option>Country 1</option>
-                    <option>Country 2</option>
-                    <option>Country 3</option>
-                </select>
+              <label for="state">State:</label>
+              <select name="state" [(ngModel)]="state">
+                <option selected >Select State</option>
+                <option>Maharashtra</option>
+                <option>Queensland</option>
+                <option>Texas</option>
+              </select>
             </div>
             <div>
-                <label>State:</label>
-                <select>
-                    <option>Select State</option>
-                    <option>State 1</option>
-                    <option>State 2</option>
-                    <option>State 3</option>
-                </select>
+              <label for="city">City:</label>
+              <select name="city" [(ngModel)]="city">
+                <option selected > Select City</option>
+                <option>Nashik</option>
+                <option>Sydney</option>
+                <option>New York</option>
+              </select>
+            </div>
+      
+            <div>
+              <label></label>
+              <input style="display: none" />
+            </div>
+      
+            <div>
+              <label for="mobno">Mobile No:</label>
+              <input
+                type="text"
+                name="mobno"
+                placeholder="Enter Mobile No"
+                [(ngModel)]="mobno"
+                required
+              />
+            </div>
+      
+            <div>
+              <label for="email">Email:</label>
+              <input
+                type="text"
+                name="email"
+                placeholder="Enter Email"
+                [(ngModel)]="email"
+                required
+              />
             </div>
             <div>
-                <label>City:</label>
-                <select>
-                    <option>Select City</option>
-                    <option>City 1</option>
-                    <option>City 2</option>
-                    <option>City 3</option>
-                </select>
+              <label for="latitude">Latitude:</label>
+              <input
+                type="text"
+                name="latitude"
+                placeholder="Enter Latitude"
+                [(ngModel)]="latitude"
+                required
+              />
             </div>
-
+      
             <div>
-                <label></label>
-                <input style="display: none;">
-            </div>
-
-            <div>
-                <label>Mobile No:</label>
-                <input type="text" placeholder="Enter Mobile No">
-            </div>
-
-            <div>
-                <label>Email:</label>
-                <input type="text" placeholder="Enter Email">
+              <label for="longitude">Longitude:</label>
+              <input
+                type="text"
+                name="longitude"
+                placeholder="Enter Longitude"
+                [(ngModel)]="longitude"
+                required
+              />
             </div>
             <div>
-                <label>Latitude:</label>
-                <input type="text" placeholder="Enter Latitude">
+              <label for="currency">Currency:</label>
+              <select name="currency" [(ngModel)]="currency">
+                <option>Select Currency</option>
+                <option>Currency 1</option>
+                <option>Currency 2</option>
+                <option>Currency 3</option>
+              </select>
             </div>
-
-
-            <div>
-                <label>Longitude:</label>
-                <input type="text" placeholder="Enter Longitude">
-            </div>
-            <div>
-                <label>Currency:</label>
-                <select>
-                    <option>Select Currency</option>
-                    <option>Currency 1</option>
-                    <option>Currency 2</option>
-                    <option>Currency 3</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="attachment">
-            <input type="file" name="uploadfile" id="img" style="display:none;" />
-            <label for="img"> <i class="fa fa-paperclip " style="padding-right: 10%;"></i> Attachment</label>
-        </div>
-
-        <div class="lower-body">
+          </div>
+          <div class="attachment">
+            <input type="file" name="uploadfile" id="img" style="display: none" />
+            <label for="img">
+              <i class="fa fa-paperclip" style="padding-right: 10%"></i>
+              Attachment</label
+            >
+          </div>
+      
+          <div class="lower-body">
             <h2 style="text-align: center">..::Contact Person Detail::..</h2>
             <fieldset></fieldset>
             <div class="account-details">
-                <div>
-                    <label style="color: red;">Name:</label>
-                    <input type="text" placeholder="Enter Person Name">
-                </div>
-                <div>
-                    <label style="color: red;">Mobile:</label>
-                    <input type="text" placeholder="Enter Mobile No">
-                </div>
-                <div>
-                    <label>Email:</label>
-                    <input type="text" placeholder="Enter Email">
-                </div>
-                <div>
-                    <label style="color: red;">Department:</label>
-                    <input type="text" placeholder=" Enter Department">
-                </div>
-                <div>
-                    <label style="color: red;">Designation:</label>
-                    <input type="text" placeholder=" Enter Designation">
-                </div>
-                <div>
-                    <button class="add">+ Add</button>
-                    <button class="cancel">X Cancel</button>
-                </div>
+              <div>
+                <label for="cpname" style="color: red">Name:</label>
+                <input
+                  name="cpname"
+                  [(ngModel)]="cpname"
+                  type="text"
+                  placeholder="Enter Person Name"
+                />
+              </div>
+              <div>
+                <label for="cpmobile" style="color: red">Mobile:</label>
+                <input
+                  name="cpmobile"
+                  [(ngModel)]="cpmobile"
+                  type="text"
+                  placeholder="Enter Mobile No"
+                />
+              </div>
+              <div>
+                <label for="cpemail">Email:</label>
+                <input
+                  name="cpemail"
+                  [(ngModel)]="cpemail"
+                  type="text"
+                  placeholder="Enter Email"
+                />
+              </div>
+              <div>
+                <label for="cpdepartment" style="color: red">Department:</label>
+                <input
+                  name="cpdepartment"
+                  [(ngModel)]="cpdepartment"
+                  type="text"
+                  placeholder=" Enter Department"
+                />
+              </div>
+              <div>
+                <label for="cpdesignation" style="color: red">Designation:</label>
+                <input
+                  name="cpdesignation"
+                  [(ngModel)]="cpdesignation"
+                  type="text"
+                  placeholder=" Enter Designation"
+                />
+              </div>
+              <div>
+                <button type="submit" (click)="showTable = true" class="add">
+                  + Add
+                </button>
+                <button class="cancel">X Cancel</button>
+              </div>
             </div>
-            <div id="addtable">
-                <table  class="emptytable"> 
-                    <thead style="background-color: rgb(241, 231, 231);">
-                      <tr>
-                        <th>Code</th>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Country</th>
-                        <th>State</th>
-                        <th>City</th>
-                        <th>Mobile No</th>
-                        <th>Email</th>
-                        <th>GST No</th>
-                        <th>PAN No</th>
-                        <th>Pincode</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                      </tr>
-                    
-                    </thead>
-                    <tbody>
-                     
-                    </tbody>
-                  </table>
-                  <h1 style="align-content: center;">Contact Person Details</h1>
-                  <table class="emptytable">
-                    <thead class="cpd">
-                        <tr>
-                            <th>Name</th>
-                            <th>Mobile</th>
-                            <th>Email</th>
-                            <th>Department</th>
-                            <th>Designation</th>
-                          </tr>
-                    </thead>
-                    
-                  </table>
+            <fieldset>
+              <div class="table-container" [ngClass]="{ 'table-open': showTable }">
+                <table *ngIf="showTable" class="displaydata">
+                  <thead>
+                    <tr class="header">
+                      <th *ngIf="showTable">Code</th>
+                      <th *ngIf="showTable">Name</th>
+                      <th *ngIf="showTable">Address</th>
+                      <th *ngIf="showTable">Country</th>
+                      <th *ngIf="showTable">State</th>
+                      <th *ngIf="showTable">City</th>
+                      <th *ngIf="showTable">Mobile No</th>
+                      <th *ngIf="showTable">Email</th>
+                      <th *ngIf="showTable">GST No</th>
+                      <th *ngIf="showTable">PAN No</th>
+                      <th *ngIf="showTable">Pincode</th>
+                      <th *ngIf="showTable">Latitude</th>
+                      <th *ngIf="showTable">Longitude</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of users">
+                      <td *ngIf="showTable">{{ user.gstno }}</td>
+                      <td *ngIf="showTable">{{ user.panno }}</td>
+                      <td *ngIf="showTable">{{ user.code }}</td>
+                      <td *ngIf="showTable">{{ user.name }}</td>
+                      <td *ngIf="showTable">{{ user.address }}</td>
+                      <td *ngIf="showTable">{{ user.pincode }}</td>
+                      <td *ngIf="showTable">{{ user.country }}</td>
+                      <td *ngIf="showTable">{{ user.state }}</td>
+                      <td *ngIf="showTable">{{ user.city }}</td>
+                      <td *ngIf="showTable">{{ user.mobno }}</td>
+                      <td *ngIf="showTable">{{ user.email }}</td>
+                      <td *ngIf="showTable">{{ user.latitude }}</td>
+                      <td *ngIf="showTable">{{ user.longitude }}</td>
+                      <td *ngIf="showTable">{{ user.currency }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+      
+                <table *ngIf="showTable" class="displaydata">
+                  <thead class="CPdetail">
+                    <tr class="header">
+                      <th *ngIf="showTable">Name</th>
+                      <th *ngIf="showTable">Mobile</th>
+                      <th *ngIf="showTable">Email</th>
+                      <th *ngIf="showTable">Department</th>
+                      <th *ngIf="showTable">Designation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of users">
+                      <td *ngIf="showTable">{{ user.cpname }}</td>
+                      <td *ngIf="showTable">{{ user.cpmobile }}</td>
+                      <td *ngIf="showTable">{{ user.cpemail }}</td>
+                      <td *ngIf="showTable">{{ user.cpdepartment }}</td>
+                      <td *ngIf="showTable">{{ user.cpdesignation }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+      
+                      
+              </div>
+              <div
+              *ngIf="!showTable && data.length === 0"
+              style="text-align: center"
+              class="no-data"
+            >
+              No Rows to Show.
             </div>
-
-        </div>
-    </form>
-</div>
+              <fieldset></fieldset>
+            </fieldset>
+          </div>
+        </form>
+        
+      </div>
+      <div class="savecancel">
+        <button style="background-color: green;" (click)="onSave()"> &#10004;	Save</button>
+        <!-- &#10004; 
+            https://www.w3schools.com/charsets/ref_utf_dingbats.asp 
+          -->
+        <button style="background-color: red;">X Cancel</button>
+      </div>
+      
+</body>
+</html>

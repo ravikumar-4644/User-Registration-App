@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { FormsModule } from '@angular/forms'; // add this line
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

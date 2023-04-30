@@ -6,11 +6,53 @@
     padding-top: 2px;
     margin-bottom: 1%;
 }
-
-.cpd{
+.table-container {
+    background-color: #f2f2f2;
+    padding: 10px;
+   
+    
+  }
+  .savecancel{
+    display: flex;
+    width: 10%;
+    margin: auto;
+    justify-items: center;
+    
+  }
+  .no-data {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin: 25px;
+  }
+.header {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #e8e9eb;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+.CPdetail{
     background-color: rgb(241, 231, 231);
 }
-.emptytable{
+
+.displaydata{
 width: 100%;
 }
 .attachment>label {

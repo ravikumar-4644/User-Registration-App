@@ -1,42 +1,54 @@
-<table>
-  <thead>
-    <tr class="t-head">
-      <th>Action</th>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Country  </th>
-      <th>State</th>
-      <th>City</th>
-      <th>Mobile No</th>
-      <th>Email</th>
-      <th>GST No</th>
-      <th>PAN No</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Pincode</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of tableData" class="t-body">
-      <td style="display: flex;">
-        <mat-icon>remove_red_eye</mat-icon>
-        <mat-icon>create</mat-icon>
-        <mat-icon>delete</mat-icon>
-      </td>
-      <td>{{ item.Code }}</td>
-      <td>{{ item.Name }}</td>
-      <td>{{ item.Address }}</td>
-      <td>{{ item.Country }}</td>
-      <td>{{ item['State,150,1'] }}</td>
-      <td>{{ item['City,150,1'] }}</td>
-      <td>{{ item['Mobile No'] }}</td>
-      <td>{{ item.Email }}</td>
-      <td>{{ item['GST No'] }}</td>
-      <td>{{ item['PAN No'] }}</td>
-      <td>{{ item.Latitude }}</td>
-      <td>{{ item.Longitude }}</td>
-      <td>{{ item.Pincode }}</td>
-    </tr>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr class="t-head">
+        <th>Action</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Country  </th>
+        <th>State</th>
+        <th>City</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>GST No</th>
+        <th>PAN No</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Pincode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData" class="t-body">
+        <td style="display: flex;">
+          <mat-icon>remove_red_eye</mat-icon>
+          <mat-icon>create</mat-icon>
+          <mat-icon>delete</mat-icon>
+        </td>
+        <td>{{ item.Code }}</td>
+        <td>{{ item.Name }}</td>
+        <td>{{ item.Address }}</td>
+        <td>{{ item.Country }}</td>
+        <td>{{ item['State,150,1'] }}</td>
+        <td>{{ item['City,150,1'] }}</td>
+        <td>{{ item['Mobile No'] }}</td>
+        <td>{{ item.Email }}</td>
+        <td>{{ item['GST No'] }}</td>
+        <td>{{ item['PAN No'] }}</td>
+        <td>{{ item.Latitude }}</td>
+        <td>{{ item.Longitude }}</td>
+        <td>{{ item.Pincode }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</body>
+</html>
