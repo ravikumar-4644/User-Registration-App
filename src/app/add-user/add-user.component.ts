@@ -1,28 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewChild } from '@angular/core';
-import { FormGroup, Validators, NgForm, FormControl } from '@angular/forms';
-
-interface User {
-  gstno: string;
-  panno: string;
-  code: string;
-  name: string;
-  address: string;
-  pincode: string;
-  country: string;
-  state: string;
-  city: string;
-  mobno: string;
-  email: string;
-  latitude: string;
-  longitude: string;
-  currency: string;
-  cpname: string;
-  cpmobile: string;
-  cpemail: string;
-  cpdepartment: string;
-  cpdesignation: string;
-}
+import { Component } from '@angular/core';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { User } from './interface';
 
 @Component({
   selector: 'app-add-user',
@@ -31,7 +10,6 @@ interface User {
 })
 export class AddUserComponent {
   constructor(private http: HttpClient) {}
-
   myForm: FormGroup = new FormGroup({
     gstno: new FormControl('', Validators.required),
     panno: new FormControl('', Validators.required),
@@ -123,10 +101,11 @@ export class AddUserComponent {
   onCancel() {
     this.myForm.reset();
   }
+
   onSave() {
     const postData = {
-      RowId: 0,
-      ActionId: 0,
+      RowId: '0',
+      ActionId: '0',
       Code: this.users[0].code,
       Name: this.users[0].name,
       Address: this.users[0].address,
@@ -140,7 +119,7 @@ export class AddUserComponent {
       PinCode: this.users[0].pincode,
       Latitude: this.users[0].latitude,
       Longitude: this.users[0].longitude,
-      ContactPersonDetails: [
+      ContactPersonDetails: JSON.stringify([
         {
           RowId: null,
           PersonName: this.users[0].cpname,
@@ -149,24 +128,29 @@ export class AddUserComponent {
           Department: this.users[0].cpdepartment,
           Designation: this.users[0].cpdesignation,
         },
-      ],
+      ]),
     };
 
-    // make the HTTP POST request
+    const headers = { 'Content-Type': 'application/json' };
+
     this.http
-      .post(
+      .post<any>(
         'http://68.178.166.216/api/API/BillToPartyMaster/SaveData',
-        postData
+        postData,
+        { headers }
       )
-      .subscribe(
-        (response) => {
+      .subscribe({
+        next: (response) => {
           console.log('Data saved successfully!');
           console.log(response);
         },
-        (error) => {
+        error: (error) => {
           console.log('Error while saving data:');
           console.log(error);
         }
-      );
+      });
   }
 }
+// response from API
+// on successfull addition [ { Message: 'Record Saved Successfully...', Result: true } ]
+// if code or name already exist, [ { Message: 'Code Already Exists...', Result: false } ]
